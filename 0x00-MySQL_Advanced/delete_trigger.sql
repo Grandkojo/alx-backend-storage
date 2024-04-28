@@ -1,2 +1,2 @@
 DROP TRIGGER IF EXISTS reset_email;
-DROP PROCEDURE AddBonus
+DROP PROCEDURE ComputeAverageScoreForUser;
