@@ -1,9 +1,11 @@
 -- a stored procedure to compute average
 DELIMITER //
-CREATE PROCEDURE ComputeAverageScoreForUser(IN user_id INT)
+CREATE PROCEDURE ComputeAverageScoreForUser(IN p_user_id INT)
 BEGIN
-	DECLARE average_score FLOAT;
-	SELECT AVG(SCORE) INTO average_score FROM corrections WHERE user_id = user_id;
-	UPDATE users SET average_score = average_score WHERE id = user_id;
-END;//
-DELiMITER ;
+    DECLARE avg_score FLOAT;
+    SELECT AVG(score) INTO avg_score FROM corrections WHERE user_id = p_user_id;
+    UPDATE users SET average_score = avg_score WHERE id = p_user_id;
+END;
+//
+DELIMITER ;
+
