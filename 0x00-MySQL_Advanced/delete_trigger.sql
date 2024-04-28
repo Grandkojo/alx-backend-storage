@@ -1,1 +1,1 @@
-DROP TRIGGER IF EXISTS holberton.decrease_quantity 
+DROP TRIGGER IF EXISTS reset_email 
