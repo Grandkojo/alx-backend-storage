@@ -1,8 +1,11 @@
-DELIMITER $$
-USE holberton
-$$
-CREATE TRIGGER decrease_quantity AFTER INSERT on holberton.items
+-- a trigger to the store
+DELIMITER //
+CREATE TRIGGER decrease_quantity
+AFTER INSERT on orders
 FOR EACH ROW
-BEGIN
-UPDATE holberton.items SET quantity = quantity - holberton.orders.number WHERE holberton.items.name = holberton.orders.name;
-END$$
+	BEGIN
+		UPDATE items 
+		SET quantity = quantity - NEW.number 
+		WHERE name = NEW.item_name;
+	END;//
+DELIMITER;
