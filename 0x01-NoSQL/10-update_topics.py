@@ -1,4 +1,4 @@
-#!/usr/bin/env ython3
+#!/usr/bin/env python3
 """Update a collection"""
 
 
