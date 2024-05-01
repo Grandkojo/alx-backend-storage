@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+""" a python script to dislplay some messages on a dataabase"""
 
 from pymongo import MongoClient
 
