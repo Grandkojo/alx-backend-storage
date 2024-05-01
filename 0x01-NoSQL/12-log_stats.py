@@ -3,8 +3,8 @@
 
 from pymongo import MongoClient
 
+
 if __name__ == "__main__":
-    
     client = MongoClient('mongodb://127.0.0.1:27017')
     nginxstuff = client.logs.nginx
     methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
@@ -18,4 +18,3 @@ if __name__ == "__main__":
 
     number = nginxstuff.count_documents({"method": "GET", "path": "/status"})
     print(f'{number} status checks')
-
