@@ -33,7 +33,7 @@ def call_history(method: typing.Callable) -> typing.Callable:
     return wrapper
 
 
-class Cache(object):
+class Cache:
     """A cache class in python for redis"""
     def __init__(self):
         """init function"""
@@ -75,6 +75,6 @@ def replay(method: typing.Callable) -> None:
     inputs = self._redis.lrange(f"{key}:inputs", 0, -1)
     outputs = self._redis.lrange(f"{key}:outputs", 0, -1)
 
-    print(f"{key} was called {len(inputs)} times")
+    print(f"{key} was called {len(inputs)} times:")
     for _in, _out in zip(inputs, outputs):
         print(f"{key}(*{_in.decode('utf-8')}) -> {_out.decode('utf-8')}")
