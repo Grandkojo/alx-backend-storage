@@ -36,7 +36,7 @@ def call_history(method: typing.Callable) -> typing.Callable:
 class Cache:
     """A cache class in python for redis"""
     def __init__(self):
-        """init function"""
+        """init function constructor"""
         self._redis = redis.Redis()
         self. _redis.flushdb()
 
